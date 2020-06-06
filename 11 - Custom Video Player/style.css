@@ -3,6 +3,10 @@ html {
 }
 
 *, *:before, *:after {
+  outline: none;
+}
+
+*, *:before, *:after {
   box-sizing: inherit;
 }
 
@@ -58,20 +62,42 @@ body {
   border-color: #ffc600;
 }
 
+.player__button[data-toggle-fullscreen]::after {
+  padding: 10px;
+  content: '\26F6';
+}
+
+.player__button.sound::after {
+  content: '\1F509';
+  font-size: 1.2rem;
+}
+
+.player__button.sound.mute::after {
+  content: '\1f507';
+  font-size: 1.2rem;
+}
+
+.player:fullscreen .player__button[data-toggle-fullscreen]::after, 
+/* .player:-moz-full-screen .player__button[data-toggle-fullscreen]::after,  */
+.player:-webkit-full-screen .player__button[data-toggle-fullscreen]::after {
+  content: '\1F795';
+}
+
 .player__slider {
-  width: 10px;
   height: 30px;
 }
 
 .player__controls {
-  display: flex;
+  flex-wrap: wrap;
+
   position: absolute;
   bottom: 0;
   width: 100%;
-  transform: translateY(100%) translateY(-5px);
+  transform: translateY(calc(100% - 5px));
   transition: all .3s;
-  flex-wrap: wrap;
   background: rgba(0,0,0,0.1);
+
+  display: flex;
 }
 
 .player:hover .player__controls {
@@ -84,24 +110,28 @@ body {
 
 .player__controls > * {
   flex: 1;
+  cursor: pointer;
 }
 
 .progress {
-  flex: 10;
-  position: relative;
-  display: flex;
+  flex: 1;
   flex-basis: 100%;
+  position: relative;
   height: 5px;
+
   transition: height 0.3s;
   background: rgba(0,0,0,0.5);
-  cursor: ew-resize;
+  
+  display: flex;
 }
 
 .progress__filled {
-  width: 50%;
-  background: #ffc600;
   flex: 0;
   flex-basis: 50%;
+
+  /* not sure if needed */
+  width: 50%;
+  background: #ffc600;
 }
 
 /* unholy css to style input type="range" */
@@ -111,6 +141,7 @@ input[type=range] {
   background: transparent;
   width: 100%;
   margin: 0 5px;
+  position: relative;
 }
 
 input[type=range]:focus {
@@ -130,7 +161,7 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
-  border-radius: 50px;
+  border-radius: 50%;
   background: #ffc600;
   cursor: pointer;
   -webkit-appearance: none;
@@ -156,7 +187,62 @@ input[type=range]::-moz-range-thumb {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
   height: 15px;
   width: 15px;
-  border-radius: 50px;
+  border-radius: 50%;
   background: #ffc600;
   cursor: pointer;
 }
+
+video::-webkit-media-controls {
+  display: none;
+}
+
+input[type=range].tooltip::before,
+input[type=range].tooltip::after {
+  --scale: 0;
+  --arrow-size: .3rem;
+  --tooltip-color: hsla(145, 50%, 90%, 0.7);
+
+  position: absolute;
+  left: 50%;
+  top: .1rem;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  transform-origin: bottom center;
+  transition: 150ms transform;
+}
+
+input[type=range].tooltip::before {
+
+  --translate-y: calc(-100%);
+
+  content: attr(data-tooltip);
+  color: white;
+  text-shadow: #000000 1px 0 3px;;
+  width: 3rem;
+  max-width: 100%;
+  text-align: center;
+  padding: .5rem;
+  border-radius: .5rem;
+  background: var(--tooltip-color);
+}
+
+input[type=range].tooltip::after {
+
+  --translate-y: - var(--arrow-size);
+  
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  margin: 0;
+  content: '';
+  left: calc(50% - var(--arrow-size));
+  transform-origin: top center;
+  transform: scale(var(--scale));
+}
+
+input[type=range].tooltip:focus::before,
+input[type=range].tooltip:focus::after,
+input[type=range].tooltip:hover::before,
+input[type=range].tooltip:hover::after {
+  --scale: 1;
+}
+
+

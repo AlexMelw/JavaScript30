@@ -35,11 +35,8 @@ function draw(e) {
   ctx.stroke();
   [lastX, lastY] = [e.offsetX, e.offsetY];
 
-  hue++;
-  if (hue >= 360) {
-    hue = 0;
-  }
-  if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+  hue = ++hue % 360;
+  if (ctx.lineWidth >= 100 || ctx.lineWidth <= 40) {
     direction = !direction;
   }
 

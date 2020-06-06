@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
 </head>
-<body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-</script>
 
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
+<body>
+
+  <style>
+
+    html, body {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit; 
+    }
+
+    .container {
+      height: 100vh;
+      width: 100vw;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .drawing-box {
+      flex: 0 0 auto;
+      width: 80vmin;
+      height: 80vmin;
+
+      padding: 10vmin;
+      border: 0.1rem solid hsl(293, 100%, 50%);
+      background: hsl(0, 100%, 100%);
+    }
+
+    .drawing-box canvas {
+      margin: 0;
+      border: 0.1rem solid hsl(261, 100%, 50%);
+    }
+  </style>
+
+  <script defer type="module" src="app.js"></script>
+  <div class="container">
+    <div class="drawing-box">
+      <canvas id="draw"></canvas>
+    </div>
+  </div>
 
 </body>
 </html>

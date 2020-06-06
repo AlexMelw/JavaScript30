@@ -24,6 +24,7 @@
       display: flex;
       align-items: center;
       border-bottom: 1px solid #F1F1F1;
+      cursor: pointer;
     }
 
     .item:last-child {
@@ -38,6 +39,7 @@
 
     input[type="checkbox"] {
       margin: 20px;
+      cursor: pointer;
     }
 
     p {
@@ -97,6 +99,7 @@
   </div>
 
 <script>
+
 const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
 let lastChecked;
@@ -125,6 +128,7 @@ function handleCheck(e) {
 }
 
 checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
 </script>
 </body>
 </html>
