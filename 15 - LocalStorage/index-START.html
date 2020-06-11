@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <script defer type="module" src="src/app.js"></script>
+
   <!--
       Fish SVG Cred:
       https://thenounproject.com/search/?q=fish&i=589236
@@ -23,6 +26,11 @@
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
     </form>
+    <div class="extra-buttons">
+      <button data-check-all>Check All</button>
+      <button data-uncheck-all>Uncheck All</button>
+      <button data-clear-all>Clear All</button>
+    </div>
   </div>
 
 <script>

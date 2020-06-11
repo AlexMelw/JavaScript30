@@ -19,16 +19,19 @@ html {
 svg {
   fill: white;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.95),
+    0 0 20px 40px rgba(255, 255, 255, 0.35);
   padding: 20px;
   border-radius: 50%;
   width: 200px;
-  margin-bottom: 50px;
 }
 
 .wrapper {
+  margin-top: 50px;
   padding: 20px;
   max-width: 350px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -67,7 +70,7 @@ h2 {
 }
 
 .plates input:checked + label:before {
-  content: "🌮";
+  content: "✅";
 }
 
 .add-items {
@@ -78,4 +81,20 @@ h2 {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: rgba(100, 100, 100, 1);
+}
+
+.extra-buttons {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+
+.extra-buttons button {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: rgba(100, 100, 100, 1);
 }
