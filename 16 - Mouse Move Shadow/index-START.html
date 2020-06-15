@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Mouse Shadow</title>
+  <script defer type="module" src="app.js"></script>
 </head>
 <body>
 
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>
+      🔥Fire!
+      <span class="shadow-el positive-positive">🔥Fire!</span>
+      <span class="shadow-el negative-positive">🔥Fire!</span>
+      <span class="shadow-el positive-negative">🔥Fire!</span>
+      <span class="shadow-el negative-negative">🔥Fire!</span>
+    </h1>
   </div>
 
   <style>
@@ -26,12 +33,32 @@
     justify-content: center;
     align-items: center;
     color: black;
+    background: hsl(319, 100%, 50%, .4);
   }
 
   h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    /* text-shadow: 10px 10px 0 rgba(0,0,0,1); */
     font-size: 100px;
+    outline: none;
+    position: relative;
   }
+
+  .shadow-el {
+    position: absolute;
+    display: none;
+    text-shadow: none;
+    color: rgb(255, 0, 0, 0.5);
+    width: 100%;
+    transform: scale(1);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .positive-positive { color: rgb(255, 0, 0, 0.5); }
+  .negative-positive { color: rgb(0, 255, 255, 0.5); }
+  .positive-negative { color: rgb(255, 255, 0, 0.5); }
+  .negative-negative { color: rgb(255, 0, 255, 0.5); }
+
   </style>
 
 <script>
