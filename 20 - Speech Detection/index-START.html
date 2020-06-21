@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Speech Detection</title>
+  <script defer type="module" src="app.js"></script>
 </head>
+
 <body>
 
-  <div class="words" contenteditable>
-  </div>
-
-<script>
-  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-
-</script>
-
+  <div class="words" contenteditable></div>
 
   <style>
+
     html {
       font-size: 10px;
     }
@@ -39,8 +35,21 @@
       background-size: 100% 3rem;
       position: relative;
       line-height: 3rem;
+      outline: none;
     }
-    
+
+    .words:hover {
+      box-shadow: 
+        0 0 0 5px #ffc600,
+        0 0 0 10px #ffffff73;
+    }
+
+    .words:focus {
+      box-shadow: 
+        0 0 0 5px #ffc600,
+        0 0 0 10px #3a2e0573;
+    }
+
     p {
       margin: 0 0 3rem;
     }
@@ -52,8 +61,7 @@
       top: 0;
       left: 30px;
       bottom: 0;
-      border: 1px solid;
-      border-color: transparent #efe4e4;
+      border: 1px solid #efe4e4;
     }
   </style>
 

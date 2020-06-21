@@ -55,7 +55,7 @@ function takePhoto() {
     const data = canvasNode.toDataURL('image/jpeg');
     const linkNode = document.createElement('a');
     linkNode.href = data;
-    linkNode.setAttribute('download', 'File name without extension');
+    linkNode.setAttribute('download', 'File name.jpg');
     linkNode.innerHTML = `
         <img src="${data}" alt="Picture of me">
     `;
