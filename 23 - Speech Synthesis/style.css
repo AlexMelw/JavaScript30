@@ -23,7 +23,7 @@ body {
     radial-gradient(circle at 100% 50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent),
     radial-gradient(circle at 0    50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent);
 
-  background-size:100px 50px;
+  background-size: 100px 50px;
 }
 
 .voiceinator {
@@ -35,7 +35,7 @@ body {
   background: white;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -80,9 +80,7 @@ h1 {
   margin: 2rem 0 -1.8rem 0;
 }
 
-.voiceinator input[type="select"] {
-
-}
+.voiceinator input[type="select"] {}
 
 .voiceinator .controls {
   display: flex;
