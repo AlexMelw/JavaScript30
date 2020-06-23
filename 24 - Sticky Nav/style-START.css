@@ -14,6 +14,24 @@ body {
   box-sizing: inherit;
 }
 
+header {
+  text-align: center;
+  height: 50vh;
+  background: url(https://images.unsplash.com/photo-1592805145644-2ee21c764c32?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80&h=1100) bottom center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header::after {
+  content: "";
+  align-self: flex-end;
+  width: 100%;
+  border-top: 4px double hsl(27, 60%, 78%);
+}
+
 .site-wrap {
   max-width: 700px;
   margin: 70px auto;
@@ -25,29 +43,29 @@ body {
   transition: transform 0.5s;
 }
 
-header {
-  text-align: center;
-  height: 50vh;
-  background: url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+nav.fixed-nav + .site-wrap {
+  transform: scale(1);
 }
 
 h1 {
   color: white;
   font-size: 7vw;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  text-shadow: 3px 4px 10px rgba(255, 255, 255, 0.5);
 }
 
 nav {
   background: black;
   top: 0;
   width: 100%;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
+  transition: max-width 1.5;
   position: relative;
   z-index: 1;
+}
+
+nav.fixed-nav {
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
@@ -68,21 +86,25 @@ nav li {
 li.logo {
   max-width: 0;
   overflow: hidden;
-  background: white;
+  background: hsl(26, 94%, 56%);
   transition: all .5s;
   font-weight: 600;
   font-size: 30px;
 }
 
+.fixed-nav li.logo {
+  max-width: 500px;
+}
+
 li.logo a {
-  color: black;
+  color: hsl(22, 19%, 17%);
 }
 
 nav a {
   text-decoration: none;
   padding: 20px;
-  display: inline-block;
   color: white;
+  display: inline-block;
   transition: all 0.2s;
   text-transform: uppercase;
 }
