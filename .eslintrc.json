@@ -1,0 +1,129 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "prettier"
+    ],
+    "globals": {
+        "Promise": true,
+        "API_URLS": false
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "brace-style": [
+            "error",
+            "1tbs"
+        ],
+        "camelcase": "warn",
+        "import/no-named-as-default": [
+            "off"
+        ],
+        "import/prefer-default-export": [
+            "off"
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "warn",
+            "windows"
+        ],
+        "max-depth": [
+            "error",
+            3
+        ],
+        "max-params": [
+            "warn",
+            3
+        ],
+        "newline-after-var": [
+            "error",
+            "always"
+        ],
+        "newline-before-return": "error",
+        "newline-per-chained-call": [
+            "error",
+            {
+                "ignoreChainWithDepth": 2
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "off"
+        ],
+        "no-nested-ternary": "error",
+        "no-param-reassign": [
+            "off"
+        ],
+        "no-restricted-syntax": [
+            "error",
+            {
+                "message": "Do not use setTimeout to get around Bugs.",
+                "selector": "CallExpression[callee.name='setTimeout']"
+            }
+        ],
+        "no-use-before-define": [
+            "off"
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": {
+                    "consistent": true,
+                    "minProperties": 2,
+                    "multiline": true
+                }
+            }
+        ],
+        "object-property-newline": "warn",
+        "one-var-declaration-per-line": [
+            "error",
+            "initializations"
+        ],
+        "operator-linebreak": [
+            "off"
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 120,
+                "singleQuote": false,
+                "tabWidth": 4,
+                "trailingComma": "es5"
+            }
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    },
+    "settings": {
+        "import/core-modules": [
+            "styled-components"
+        ],
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": [
+                    "node_modules",
+                    "src",
+                    "src/js",
+                    "src/js/theme"
+                ]
+            }
+        }
+    }
+}

@@ -27,7 +27,13 @@ video {
   border-radius: 50px;
   box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
   overflow: hidden;
+  cursor: grab;
+  user-select: none;
 }
+
+.speed.active {
+  cursor: grabbing;
+} 
 
 .speed-bar {
   width: 100%;
