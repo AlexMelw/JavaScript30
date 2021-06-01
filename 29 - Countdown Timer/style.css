@@ -38,14 +38,30 @@ body {
 }
 
 .timer__controls form {
-  flex: 1;
+  flex: 1 0 auto;
+  flex-basis: 0%;
   display: flex;
+  will-change: flex-basis;
+  transition: flex-basis .5s ease-in-out;
+  transition-delay: 0s;
+}
+
+.timer__controls form:focus-within {
+  flex-basis: 10%;
+  outline: none;
 }
 
 .timer__controls input {
   flex: 1;
   border: 0;
-  padding: 2rem;
+  padding: .5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: hsl(217deg 75% 36%);
+}
+
+.timer__controls input:focus{
+  outline: none;
 }
 
 .timer__button {
@@ -58,7 +74,7 @@ body {
   background: rgba(0,0,0,0.1);
   border-bottom: 3px solid rgba(0,0,0,0.2);
   border-right: 1px solid rgba(0,0,0,0.2);
-  padding: 1rem;
+  padding: 2rem;
   font-family: 'Inconsolata', monospace;
 }
 
@@ -79,4 +95,20 @@ body {
 .display__end-time {
   font-size: 4rem;
   color: white;
+}
+
+.blinker {
+  animation: blinker-animation 1s linear infinite;
+}
+
+@keyframes blinker-animation {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90%, 100% {
+    opacity: 1;
+  }
 }
