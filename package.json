@@ -4,9 +4,9 @@
   "description": "![](https://javascript30.com/images/JS3-social-share.png)",
   "main": "index.js",
   "devDependencies": {
-    "eslint": "^7.27.0",
-    "eslint-plugin-node": "^11.1.0",
     "babel-eslint": "7.2.3",
+    "cssnano": "^5.0.5",
+    "eslint": "^7.27.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-import-resolver-node": "^0.3.2",
@@ -14,7 +14,9 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jasmine": "^2.10.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.0.0",
+    "postcss": "^8.3.0",
     "prettier": "^1.14.3"
   },
   "scripts": {

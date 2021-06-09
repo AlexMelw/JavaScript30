@@ -1,3 +1,5 @@
+import "./style.css";
+
 const leftTimeContainer = document.querySelector(".display__time-left");
 const endTimeContainer = document.querySelector(".display__end-time");
 const timeTriggers = document.querySelectorAll("[data-time]");
